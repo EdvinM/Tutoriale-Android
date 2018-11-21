@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import ro.ramonnastase.tutorialeandroid.Helpers.HelperFunc;
 import ro.ramonnastase.tutorialeandroid.R;
 
 public class LoginActivity extends AppCompatActivity {
