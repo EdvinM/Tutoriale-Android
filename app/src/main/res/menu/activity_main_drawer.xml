@@ -9,7 +9,7 @@
             android:title="Acasă" />
         <item
             android:id="@+id/menu_item_1"
-            android:title="Item 1" />
+            android:title="Pagina Reclame" />
         <item
             android:id="@+id/menu_item_2"
             android:title="Item 2" />

@@ -27,37 +27,10 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <RelativeLayout
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="92dp"
-                android:text="Yey! Prima aplicatie in android, instalata!" />
-
-            <ImageView
-                android:id="@+id/imageViewPreview"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="134dp"
-                app:srcCompat="@mipmap/ic_launcher" />
-
-            <Button
-                android:id="@+id/buttonSelectFromGallery"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="88dp"
-                android:text="Selecteaza din Galerie" />
-
-        </RelativeLayout>
+            android:layout_height="match_parent"
+            android:id="@+id/frame_layout_activity_main"/>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"

@@ -23,17 +23,18 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.ads.MobileAds;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import ro.ramonnastase.tutorialeandroid.NavigationItems.ItemAdmobFragment;
+import ro.ramonnastase.tutorialeandroid.NavigationItems.ItemHomeFragment;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private ImageView imageViewPreview;
-    private Button buttonSelectFromGallery;
 
-    public static final int PICK_IMAGE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,20 +61,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        imageViewPreview = findViewById(R.id.imageViewPreview);
-        buttonSelectFromGallery = findViewById(R.id.buttonSelectFromGallery);
-
-        buttonSelectFromGallery.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                checkPermission(MainActivity.this, android.Manifest.permission.READ_EXTERNAL_STORAGE);
-
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Selecteaza o Imagine"), PICK_IMAGE);
-            }
-        });
+        MobileAds.initialize(this, "ca-app-pub-7993922319587744~4317597341");
     }
 
     @Override
@@ -108,26 +96,6 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
-        if (requestCode == PICK_IMAGE)
-        {
-            if(resultCode == RESULT_OK)
-            {
-                Uri selectedImage  = data.getData();
-                if(selectedImage != null)
-                {
-                    Glide.with(MainActivity.this).load(selectedImage).into(imageViewPreview);
-                }
-                else
-                {
-                    Log.d("MainActivity", "Nu am putut incarca imaginea din galerie");
-                }
-            }
-        }
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -135,8 +103,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout_activity_main, new ItemHomeFragment()).commit();
         } else if (id == R.id.menu_item_1) {
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout_activity_main, new ItemAdmobFragment()).addToBackStack("fragmentAdmbob").commit();
 
         } else if (id == R.id.menu_item_2) {
 
@@ -148,34 +118,8 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        Log.d("MainActivity", "debug debug");
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults)
-    {
-        switch (requestCode)
-        {
-
-        }
-    }
-
-    public boolean checkPermission(Activity activity, String permission)
-    {
-        List<String> listPermissionsNeeded = new ArrayList<>();
-
-        if(ContextCompat.checkSelfPermission(activity, permission) != PackageManager.PERMISSION_GRANTED)
-            listPermissionsNeeded.add(permission);
-
-        if (!listPermissionsNeeded.isEmpty())
-        {
-            ActivityCompat.requestPermissions(activity, listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), 10 );
-            return false;
-        }
         return true;
     }
 }
