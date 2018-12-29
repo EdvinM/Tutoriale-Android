@@ -30,6 +30,7 @@ import java.util.List;
 
 import ro.ramonnastase.tutorialeandroid.NavigationItems.ItemAdmobFragment;
 import ro.ramonnastase.tutorialeandroid.NavigationItems.ItemHomeFragment;
+import ro.ramonnastase.tutorialeandroid.NavigationItems.ListFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -42,15 +43,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -109,7 +101,7 @@ public class MainActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout_activity_main, new ItemAdmobFragment()).addToBackStack("fragmentAdmbob").commit();
 
         } else if (id == R.id.menu_item_2) {
-
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout_activity_main, new ListFragment()).addToBackStack("fragmentListView").commit();
         } else if (id == R.id.menu_item_3) {
 
         } else if (id == R.id.menu_item_4) {
