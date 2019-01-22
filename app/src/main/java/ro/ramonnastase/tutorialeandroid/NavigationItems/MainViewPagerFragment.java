@@ -65,5 +65,10 @@ public class MainViewPagerFragment extends Fragment {
         viewPagerMain.setAdapter(viewPagerAdapter);
 
         tabLayout.setupWithViewPager(viewPagerMain);
+
+        tabLayout.getTabAt(0).setIcon(R.mipmap.ic_tab_1);
+        tabLayout.getTabAt(1).setIcon(R.mipmap.ic_tab_2);
+        tabLayout.getTabAt(2).setIcon(R.mipmap.ic_tab_3);
+
     }
 }
