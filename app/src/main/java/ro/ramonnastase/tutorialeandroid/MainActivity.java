@@ -28,6 +28,7 @@ import com.google.android.gms.ads.MobileAds;
 import java.util.ArrayList;
 import java.util.List;
 
+import ro.ramonnastase.tutorialeandroid.NavigationItems.HTTPRequestFragment;
 import ro.ramonnastase.tutorialeandroid.NavigationItems.ItemAdmobFragment;
 import ro.ramonnastase.tutorialeandroid.NavigationItems.ItemHomeFragment;
 import ro.ramonnastase.tutorialeandroid.NavigationItems.ListFragment;
@@ -106,7 +107,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.menu_item_3) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout_activity_main, new MainViewPagerFragment()).addToBackStack("fragmentViewPager").commit();
         } else if (id == R.id.menu_item_4) {
-
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout_activity_main, new HTTPRequestFragment()).addToBackStack("httpRequestFragment").commit();
         } else if (id == R.id.menu_item_5) {
 
         }

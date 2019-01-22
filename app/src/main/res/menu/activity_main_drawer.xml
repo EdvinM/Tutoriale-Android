@@ -22,7 +22,7 @@
         <menu>
             <item
                 android:id="@+id/menu_item_4"
-                android:title="Item 4" />
+                android:title="HTTP Request" />
             <item
                 android:id="@+id/menu_item_5"
                 android:title="Item 5" />
