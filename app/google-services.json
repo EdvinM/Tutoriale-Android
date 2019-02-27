@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "536067055804",
+    "firebase_url": "https://tutoriale-android.firebaseio.com",
+    "project_id": "tutoriale-android",
+    "storage_bucket": "tutoriale-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:536067055804:android:e66223b0e2b3994e",
+        "android_client_info": {
+          "package_name": "ro.ramonnastase.tutorialeandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "536067055804-3cs4s2ni866a4cnn99hkoot711s7j5ur.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdRd3LhyP_pC26O9fTYGB_sorXfC263Qs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
